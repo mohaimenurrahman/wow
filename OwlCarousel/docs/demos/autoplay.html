@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- head -->
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Autoplay usage demo">
+    <meta name="author" content="David Deutsch">
+    <title>
+      Autoplay Demo 
+    </title>
+
+    <!-- Stylesheets -->
+    
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <!-- javascript -->
+    <script src="../assets/vendors/jquery.min.js"></script>
+    <script src="../assets/owlcarousel/owl.carousel.js"></script>
+
+    <style>
+
+      img{
+        height: 230px;
+        width: 40px;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <section class="title">
+      <div class="row">
+        <div class="large-12 columns">
+          <h1>Practice</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--  Demos -->
+    <section id="demos">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <img src="../assets/img/1.png">
+            </div>
+            <div class="item">
+              <img src="../assets/img/1.png">
+            </div>
+            <div class="item">
+              <img src="../assets/img/1.png">
+            </div>
+            <div class="item">
+              <img src="../assets/img/1.png">
+            </div>
+            <div class="item">
+              <img src="../assets/img/1.png">
+            </div>
+            
+          </div>
+          
+          <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                items: 5,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true
+              });
+              $('.play').on('click', function() {
+                owl.trigger('play.owl.autoplay', [1000])
+              })
+              $('.stop').on('click', function() {
+                owl.trigger('stop.owl.autoplay')
+              })
+            })
+          </script>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- vendors -->
+    
+  </body>
+</html>
